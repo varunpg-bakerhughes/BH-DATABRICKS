@@ -1370,6 +1370,12 @@ Resources:
               AWS: !Sub 'arn:aws:iam::${AWS::AccountId}:root'
             Action: 'kms:*'
             Resource: '*'
+          - Sid: Enable IAM user permissions to HVR
+            Effect: Allow
+            Principal:
+              AWS: !Sub 'arn:aws:iam::492944730949:role/hvrroleRole'
+            Action: 'kms:*'
+            Resource: '*'
       Tags:
         - Key: app
           Value: !Ref app
