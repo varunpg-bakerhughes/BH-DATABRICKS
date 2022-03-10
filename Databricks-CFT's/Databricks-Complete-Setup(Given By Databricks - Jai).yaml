@@ -245,7 +245,7 @@ Parameters:
   SubnetIDs:
     Description: "Enter at least two private subnet IDs [i.e. subnet-xxxx,subnet-yyyy]. Only enter a value if you set VPCID. Subnets cannot be shared with other workspaces or non-Databricks resources. Each subnet must be private, have outbound access, and a netmask between /17 and /25. The NAT gateway must have its own subnet that routes 0.0.0.0/0 traffic to an internet gateway. For more information, see https://docs.databricks.com/administration-guide/cloud-configurations/aws/customer-managed-vpc.html."
     Type: String
-    Default: 'subnet-0485693c2c8bb5bb6,subnet-0d087ed6be9869b10'
+    Default: 'subnet-0485693c2c8bb5bb6,subnet-0d087ed6be9869b10,subnet-044bbe3936e308818,subnet-014aca71fa33540d6'
   NewKMSKeyAlias:
     Description: "(Optional) Creates a new AWS KMS key with the given alias for encrypting data"
     Type: String
@@ -1771,4 +1771,3 @@ Resources:
               finally:
                   timer.cancel()
                   cfnresponse.send(event, context, status, {}, None)
-                  
